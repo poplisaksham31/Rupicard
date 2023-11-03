@@ -1,0 +1,50 @@
+.BottomNavbar {
+  background-color: #000;
+  width: 90%;
+}
+
+.NavBar {
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+}
+
+.Address {
+  color: #9ea7ae;
+}
+
+.Grievance {
+  color: #fff;
+}
+
+.BottomBorder {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(140.86deg, #65ecd8 11.07%, #fdef78 80.28%);
+  padding: 0px 0px;
+  margin: 0px 0px;
+}
+
+.TopBorder {
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  padding: 0px 0px;
+  margin: 0px 0px;
+}
+
+.InstantCredit {
+  font-size: 40px;
+  color: #fff;
+}
+
+.ColorVariant {
+  background: -webkit-linear-gradient(#65ecd8, #fdef78) !important;
+  -webkit-text-fill-color: transparent !important;
+  -webkit-background-clip: text !important;
+}
+
+.PublicityCard{
+    color: #fff;
+    font-size: 1.5rem;
+}

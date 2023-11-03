@@ -1,0 +1,34 @@
+.BottomNavbar{
+    background-color: #000;
+    width: 90%;
+}
+
+.NavBar{
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+}
+
+.Address{
+    color: #9EA7AE;
+}
+
+.Grievance{
+    color: #fff;
+}
+
+.BottomBorder{
+    width: 100%;
+    height: 2px;
+    background:linear-gradient(140.86deg, #65ECD8 11.07%, #FDEF78 80.28%);
+    padding: 0px 0px;
+    margin: 0px 0px;
+}
+
+.TopBorder{
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    padding: 0px 0px;
+    margin: 0px 0px;
+}
