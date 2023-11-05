@@ -14,9 +14,12 @@ import { useForm } from "react-hook-form";
 
 function App() {
   const [videoScrolled, setVidoScrolled] = useState(false);
+  const [showAnimation, setShowAnimation] = useState(false);
+  const [width, setWidth] = useState(1000);
 
   useEffect(() => {
     const targetDiv = document.getElementById('navBar');
+    const animationDiv = document.getElementById("animationDiv");
 
     function handleScroll() {
       if (targetDiv) {
@@ -27,6 +30,14 @@ function App() {
           setVidoScrolled(false);
         }
       }
+      if (animationDiv) {
+        const targetDivPosition = targetDiv.getBoundingClientRect();
+        if (targetDivPosition.top < window.innerHeight) {
+          setShowAnimation(true);
+        } else {
+          setShowAnimation(false);
+        }
+      }
     }
 
     window.addEventListener('scroll', handleScroll);
@@ -35,25 +46,42 @@ function App() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+        window.removeEventListener("resize", handleResize);
+    };
+  }, [width]);
   
   const { register } = useForm();
-
   return (
     <div className="App">
       <TopNavbar
         register={register}
+        width={width}
       />
       <div style={{background: "#fff"}}>
-      <Features />
-        <Cashback />
-        <CashbackValue />
-        <ZeroForex />
-        <LifetimeFree />
-        <MobileCardComponent />
+        <Features showAnimation={showAnimation} />
+        <Cashback
+          width={width}
+        />
+        <CashbackValue
+          width={width}
+        />
+        <ZeroForex
+          width={width}
+        />
+        <LifetimeFree width={width}/>
+        <MobileCardComponent width={width} />
         </div>
-        <Promises />
-      <BottomNavBar />
-      {videoScrolled && <FixedNavbar register={register} />}
+      <Promises width={width} />
+      <BottomNavBar width={width} />
+      {videoScrolled && <FixedNavbar register={register} width={width} />}
     </div>
   );
 }

@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react";
 import styles from "./features.module.css";
 
-const Features = () => {
+const Features = ({showAnimation}) => {
   return (
-    <div className={styles.FeatureHeader} style={{background:"#fff", justifyContent: "center" }}>
+    <div className={`${styles.FeatureHeader} ${showAnimation?styles.AnimationClass:""}`} style={{background:"#fff", justifyContent: "center" }} id="animationDiv">
       <div className={styles.FeatureContent}>
         <div className="mb-1">
           <span className={styles.GreyHeading}>
@@ -26,7 +25,7 @@ const Features = () => {
       </div>
       <div style={{display: 'flex', justifyContent: 'center', marginTop: '5rem'}}>
               <div className={`${styles.RoundContainer}`}>
-              <img src="https://www.uni.cards/images/down_arrow.svg" width={100} height={100}/>
+              <img src="https://www.uni.cards/images/down_arrow.svg" width={100} height={100} alt="rupicard"/>
         </div>
         
       </div>

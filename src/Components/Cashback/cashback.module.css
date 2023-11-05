@@ -29,3 +29,9 @@
     margin-bottom: 8rem;
     width: 100%;
 }
+
+.MobileCashback{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

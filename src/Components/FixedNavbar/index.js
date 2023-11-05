@@ -1,7 +1,7 @@
-const FixedNavbar = ({ register }) => {
+const FixedNavbar = ({ register, width }) => {
   return (
     <div
-      className="d-flex py-4 px-5"
+      className={`d-flex py-4 ${width>870?"px-5":"px-1"}`}
       style={{
         justifyContent: "space-between",
         alignItems: "center",
@@ -30,7 +30,7 @@ const FixedNavbar = ({ register }) => {
           Apply Now
         </button>
       </div>
-      <div className="rounded py-1 px-1 mt-1 d-flex">
+      <div className="rounded py-1 px-1 mt-1 d-flex" style={{width: width>870?"": "40%"}}>
         <input
           className="py-2 rounded px-3 me-2"
           style={{ background: "#000", border: "none" }}

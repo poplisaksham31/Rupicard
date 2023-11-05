@@ -24,3 +24,9 @@
     margin-bottom: 8rem;
     width: 100%;
 }
+
+.MobileZeroForex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
